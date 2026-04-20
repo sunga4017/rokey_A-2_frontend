@@ -1,0 +1,485 @@
+[0.208s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'cobot1', '--symlink-install']
+[0.208s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['cobot1'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7b79dbdf84c0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7b79dbdbff40>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7b79dbdbff40>>)
+[0.664s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.664s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.664s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.664s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.664s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.664s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.664s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/rokey/ROKEY7_FIRST_PROJECT'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extensions ['ignore', 'ignore_ament_install']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extension 'ignore'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extension 'ignore_ament_install'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extensions ['colcon_pkg']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extension 'colcon_pkg'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extensions ['colcon_meta']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extension 'colcon_meta'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extensions ['ros']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extension 'ros'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extensions ['cmake', 'python']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extension 'cmake'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extension 'python'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extensions ['python_setup_py']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(backend) by extension 'python_setup_py'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extensions ['ignore', 'ignore_ament_install']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extension 'ignore'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extension 'ignore_ament_install'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extensions ['colcon_pkg']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extension 'colcon_pkg'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extensions ['colcon_meta']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extension 'colcon_meta'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extensions ['ros']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extension 'ros'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extensions ['cmake', 'python']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extension 'cmake'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extension 'python'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extensions ['python_setup_py']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(script) by extension 'python_setup_py'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/cobot1) by extensions ['ignore', 'ignore_ament_install']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/cobot1) by extension 'ignore'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/cobot1) by extension 'ignore_ament_install'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/cobot1) by extensions ['colcon_pkg']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/cobot1) by extension 'colcon_pkg'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/cobot1) by extensions ['colcon_meta']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/cobot1) by extension 'colcon_meta'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/cobot1) by extensions ['ros']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/cobot1) by extension 'ros'
+[0.699s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cobot1' with type 'ros.ament_python' and name 'cobot1'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extensions ['ignore', 'ignore_ament_install']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extension 'ignore'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extension 'ignore_ament_install'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extensions ['colcon_pkg']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extension 'colcon_pkg'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extensions ['colcon_meta']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extension 'colcon_meta'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extensions ['ros']
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extension 'ros'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extensions ['cmake', 'python']
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extension 'cmake'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extension 'python'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extensions ['python_setup_py']
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2) by extension 'python_setup_py'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_bringup2) by extensions ['ignore', 'ignore_ament_install']
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_bringup2) by extension 'ignore'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_bringup2) by extension 'ignore_ament_install'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_bringup2) by extensions ['colcon_pkg']
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_bringup2) by extension 'colcon_pkg'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_bringup2) by extensions ['colcon_meta']
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_bringup2) by extension 'colcon_meta'
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_bringup2) by extensions ['ros']
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_bringup2) by extension 'ros'
+[0.702s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_bringup2' with type 'ros.ament_python' and name 'dsr_bringup2'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_common2) by extensions ['ignore', 'ignore_ament_install']
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_common2) by extension 'ignore'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_common2) by extension 'ignore_ament_install'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_common2) by extensions ['colcon_pkg']
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_common2) by extension 'colcon_pkg'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_common2) by extensions ['colcon_meta']
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_common2) by extension 'colcon_meta'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_common2) by extensions ['ros']
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_common2) by extension 'ros'
+[0.703s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_common2' with type 'ros.ament_cmake' and name 'dsr_common2'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_controller2) by extensions ['ignore', 'ignore_ament_install']
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_controller2) by extension 'ignore'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_controller2) by extension 'ignore_ament_install'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_controller2) by extensions ['colcon_pkg']
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_controller2) by extension 'colcon_pkg'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_controller2) by extensions ['colcon_meta']
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_controller2) by extension 'colcon_meta'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_controller2) by extensions ['ros']
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_controller2) by extension 'ros'
+[0.706s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_controller2' with type 'ros.ament_cmake' and name 'dsr_controller2'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_description2) by extensions ['ignore', 'ignore_ament_install']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_description2) by extension 'ignore'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_description2) by extension 'ignore_ament_install'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_description2) by extensions ['colcon_pkg']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_description2) by extension 'colcon_pkg'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_description2) by extensions ['colcon_meta']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_description2) by extension 'colcon_meta'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_description2) by extensions ['ros']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_description2) by extension 'ros'
+[0.709s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_description2' with type 'ros.ament_cmake' and name 'dsr_description2'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extensions ['ignore', 'ignore_ament_install']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extension 'ignore'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extension 'ignore_ament_install'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extensions ['colcon_pkg']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extension 'colcon_pkg'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extensions ['colcon_meta']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extension 'colcon_meta'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extensions ['ros']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extension 'ros'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extensions ['cmake', 'python']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extension 'cmake'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extension 'python'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extensions ['python_setup_py']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2) by extension 'python_setup_py'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_example) by extensions ['ignore', 'ignore_ament_install']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_example) by extension 'ignore'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_example) by extension 'ignore_ament_install'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_example) by extensions ['colcon_pkg']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_example) by extension 'colcon_pkg'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_example) by extensions ['colcon_meta']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_example) by extension 'colcon_meta'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_example) by extensions ['ros']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_example) by extension 'ros'
+[0.711s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_example2/dsr_example' with type 'ros.ament_python' and name 'dsr_example'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_realtime_control) by extensions ['ignore', 'ignore_ament_install']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_realtime_control) by extension 'ignore'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_realtime_control) by extension 'ignore_ament_install'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_realtime_control) by extensions ['colcon_pkg']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_realtime_control) by extension 'colcon_pkg'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_realtime_control) by extensions ['colcon_meta']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_realtime_control) by extension 'colcon_meta'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_realtime_control) by extensions ['ros']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_realtime_control) by extension 'ros'
+[0.713s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_example2/dsr_realtime_control' with type 'ros.ament_cmake' and name 'dsr_realtime_control'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_visualservoing) by extensions ['ignore', 'ignore_ament_install']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_visualservoing) by extension 'ignore'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_visualservoing) by extension 'ignore_ament_install'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_visualservoing) by extensions ['colcon_pkg']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_visualservoing) by extension 'colcon_pkg'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_visualservoing) by extensions ['colcon_meta']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_visualservoing) by extension 'colcon_meta'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_visualservoing) by extensions ['ros']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_example2/dsr_visualservoing) by extension 'ros'
+[0.716s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_example2/dsr_visualservoing' with type 'ros.ament_python' and name 'dsr_visualservoing'
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_gazebo2) by extensions ['ignore', 'ignore_ament_install']
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_gazebo2) by extension 'ignore'
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_gazebo2) by extension 'ignore_ament_install'
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_gazebo2) by extensions ['colcon_pkg']
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_gazebo2) by extension 'colcon_pkg'
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_gazebo2) by extensions ['colcon_meta']
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_gazebo2) by extension 'colcon_meta'
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_gazebo2) by extensions ['ros']
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_gazebo2) by extension 'ros'
+[0.718s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_gazebo2' with type 'ros.ament_cmake' and name 'dsr_gazebo2'
+[0.718s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_hardware2) by extensions ['ignore', 'ignore_ament_install']
+[0.718s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_hardware2) by extension 'ignore'
+[0.718s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_hardware2) by extension 'ignore_ament_install'
+[0.718s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_hardware2) by extensions ['colcon_pkg']
+[0.718s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_hardware2) by extension 'colcon_pkg'
+[0.718s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_hardware2) by extensions ['colcon_meta']
+[0.718s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_hardware2) by extension 'colcon_meta'
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_hardware2) by extensions ['ros']
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_hardware2) by extension 'ros'
+[0.721s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_hardware2' with type 'ros.ament_cmake' and name 'dsr_hardware2'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extensions ['ignore', 'ignore_ament_install']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extension 'ignore'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extension 'ignore_ament_install'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extensions ['colcon_pkg']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extension 'colcon_pkg'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extensions ['colcon_meta']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extension 'colcon_meta'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extensions ['ros']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extension 'ros'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extensions ['cmake', 'python']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extension 'cmake'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extension 'python'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extensions ['python_setup_py']
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2) by extension 'python_setup_py'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0509) by extensions ['ignore', 'ignore_ament_install']
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0509) by extension 'ignore'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0509) by extension 'ignore_ament_install'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0509) by extensions ['colcon_pkg']
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0509) by extension 'colcon_pkg'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0509) by extensions ['colcon_meta']
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0509) by extension 'colcon_meta'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0509) by extensions ['ros']
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0509) by extension 'ros'
+[0.723s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0509' with type 'ros.ament_cmake' and name 'dsr_moveit_config_a0509'
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0912) by extensions ['ignore', 'ignore_ament_install']
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0912) by extension 'ignore'
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0912) by extension 'ignore_ament_install'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0912) by extensions ['colcon_pkg']
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0912) by extension 'colcon_pkg'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0912) by extensions ['colcon_meta']
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0912) by extension 'colcon_meta'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0912) by extensions ['ros']
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0912) by extension 'ros'
+[0.725s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0912' with type 'ros.ament_cmake' and name 'dsr_moveit_config_a0912'
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_e0509) by extensions ['ignore', 'ignore_ament_install']
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_e0509) by extension 'ignore'
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_e0509) by extension 'ignore_ament_install'
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_e0509) by extensions ['colcon_pkg']
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_e0509) by extension 'colcon_pkg'
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_e0509) by extensions ['colcon_meta']
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_e0509) by extension 'colcon_meta'
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_e0509) by extensions ['ros']
+[0.726s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_e0509) by extension 'ros'
+[0.726s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_e0509' with type 'ros.ament_cmake' and name 'dsr_moveit_config_e0509'
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2017) by extensions ['ignore', 'ignore_ament_install']
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2017) by extension 'ignore'
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2017) by extension 'ignore_ament_install'
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2017) by extensions ['colcon_pkg']
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2017) by extension 'colcon_pkg'
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2017) by extensions ['colcon_meta']
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2017) by extension 'colcon_meta'
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2017) by extensions ['ros']
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2017) by extension 'ros'
+[0.728s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2017' with type 'ros.ament_cmake' and name 'dsr_moveit_config_h2017'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2515) by extensions ['ignore', 'ignore_ament_install']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2515) by extension 'ignore'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2515) by extension 'ignore_ament_install'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2515) by extensions ['colcon_pkg']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2515) by extension 'colcon_pkg'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2515) by extensions ['colcon_meta']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2515) by extension 'colcon_meta'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2515) by extensions ['ros']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2515) by extension 'ros'
+[0.730s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2515' with type 'ros.ament_cmake' and name 'dsr_moveit_config_h2515'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0609) by extensions ['ignore', 'ignore_ament_install']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0609) by extension 'ignore'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0609) by extension 'ignore_ament_install'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0609) by extensions ['colcon_pkg']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0609) by extension 'colcon_pkg'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0609) by extensions ['colcon_meta']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0609) by extension 'colcon_meta'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0609) by extensions ['ros']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0609) by extension 'ros'
+[0.732s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0609' with type 'ros.ament_cmake' and name 'dsr_moveit_config_m0609'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0617) by extensions ['ignore', 'ignore_ament_install']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0617) by extension 'ignore'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0617) by extension 'ignore_ament_install'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0617) by extensions ['colcon_pkg']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0617) by extension 'colcon_pkg'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0617) by extensions ['colcon_meta']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0617) by extension 'colcon_meta'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0617) by extensions ['ros']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0617) by extension 'ros'
+[0.734s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0617' with type 'ros.ament_cmake' and name 'dsr_moveit_config_m0617'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1013) by extensions ['ignore', 'ignore_ament_install']
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1013) by extension 'ignore'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1013) by extension 'ignore_ament_install'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1013) by extensions ['colcon_pkg']
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1013) by extension 'colcon_pkg'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1013) by extensions ['colcon_meta']
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1013) by extension 'colcon_meta'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1013) by extensions ['ros']
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1013) by extension 'ros'
+[0.736s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1013' with type 'ros.ament_cmake' and name 'dsr_moveit_config_m1013'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1509) by extensions ['ignore', 'ignore_ament_install']
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1509) by extension 'ignore'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1509) by extension 'ignore_ament_install'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1509) by extensions ['colcon_pkg']
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1509) by extension 'colcon_pkg'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1509) by extensions ['colcon_meta']
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1509) by extension 'colcon_meta'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1509) by extensions ['ros']
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1509) by extension 'ros'
+[0.738s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1509' with type 'ros.ament_cmake' and name 'dsr_moveit_config_m1509'
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_p3020) by extensions ['ignore', 'ignore_ament_install']
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_p3020) by extension 'ignore'
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_p3020) by extension 'ignore_ament_install'
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_p3020) by extensions ['colcon_pkg']
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_p3020) by extension 'colcon_pkg'
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_p3020) by extensions ['colcon_meta']
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_p3020) by extension 'colcon_meta'
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_p3020) by extensions ['ros']
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_moveit2/dsr_moveit_config_p3020) by extension 'ros'
+[0.740s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_p3020' with type 'ros.ament_cmake' and name 'dsr_moveit_config_p3020'
+[0.740s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_msgs2) by extensions ['ignore', 'ignore_ament_install']
+[0.740s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_msgs2) by extension 'ignore'
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_msgs2) by extension 'ignore_ament_install'
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_msgs2) by extensions ['colcon_pkg']
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_msgs2) by extension 'colcon_pkg'
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_msgs2) by extensions ['colcon_meta']
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_msgs2) by extension 'colcon_meta'
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_msgs2) by extensions ['ros']
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_msgs2) by extension 'ros'
+[0.742s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_msgs2' with type 'ros.ament_cmake' and name 'dsr_msgs2'
+[0.742s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_mujoco) by extensions ['ignore', 'ignore_ament_install']
+[0.742s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_mujoco) by extension 'ignore'
+[0.742s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_mujoco) by extension 'ignore_ament_install'
+[0.742s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_mujoco) by extensions ['colcon_pkg']
+[0.742s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_mujoco) by extension 'colcon_pkg'
+[0.742s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_mujoco) by extensions ['colcon_meta']
+[0.743s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_mujoco) by extension 'colcon_meta'
+[0.743s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_mujoco) by extensions ['ros']
+[0.743s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_mujoco) by extension 'ros'
+[0.744s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_mujoco' with type 'ros.ament_cmake' and name 'dsr_mujoco'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_tests) by extensions ['ignore', 'ignore_ament_install']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_tests) by extension 'ignore'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_tests) by extension 'ignore_ament_install'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_tests) by extensions ['colcon_pkg']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_tests) by extension 'colcon_pkg'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_tests) by extensions ['colcon_meta']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_tests) by extension 'colcon_meta'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_tests) by extensions ['ros']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/doosan-robot2/dsr_tests) by extension 'ros'
+[0.746s] DEBUG:colcon.colcon_core.package_identification:Package 'src/doosan-robot2/dsr_tests' with type 'ros.ament_python' and name 'dsr_tests'
+[0.746s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extensions ['ignore', 'ignore_ament_install']
+[0.746s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extension 'ignore'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extension 'ignore_ament_install'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extensions ['colcon_pkg']
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extension 'colcon_pkg'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extensions ['colcon_meta']
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extension 'colcon_meta'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extensions ['ros']
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extension 'ros'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extensions ['cmake', 'python']
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extension 'cmake'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extension 'python'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extensions ['python_setup_py']
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2) by extension 'python_setup_py'
+[1.078s] ERROR:colcon.colcon_core.package_identification:Exception in package identification extension 'python_setup_py' in 'src/dsr_rokey2': Command '['/usr/bin/python3', '-c', 'import sys;from contextlib import suppress;exec("with suppress(ImportError):    from setuptools.extern.packaging.specifiers    import SpecifierSet");exec("with suppress(ImportError):    from packaging.specifiers import SpecifierSet");from distutils.core import run_setup;dist = run_setup(    \'setup.py\', script_args=(\'--dry-run\',), stop_after=\'config\');skip_keys = (\'cmdclass\', \'distclass\', \'ext_modules\', \'metadata\');data = {    key: value for key, value in dist.__dict__.items()     if (        not key.startswith(\'_\') and         not callable(value) and         key not in skip_keys and         key not in dist.display_option_names    )};data[\'metadata\'] = {    k: v for k, v in dist.metadata.__dict__.items()     if k not in (\'license_files\', \'provides_extras\')};sys.stdout.buffer.write(repr(data).encode(\'utf-8\'))']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/colcon_core/package_identification/__init__.py", line 144, in _identify
+    retval = extension.identify(_reused_descriptor_instance)
+  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 48, in identify
+    config = get_setup_information(setup_py)
+  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 249, in get_setup_information
+    _setup_information_cache[hashable_env] = _get_setup_information(
+  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 296, in _get_setup_information
+    result = subprocess.run(
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '-c', 'import sys;from contextlib import suppress;exec("with suppress(ImportError):    from setuptools.extern.packaging.specifiers    import SpecifierSet");exec("with suppress(ImportError):    from packaging.specifiers import SpecifierSet");from distutils.core import run_setup;dist = run_setup(    \'setup.py\', script_args=(\'--dry-run\',), stop_after=\'config\');skip_keys = (\'cmdclass\', \'distclass\', \'ext_modules\', \'metadata\');data = {    key: value for key, value in dist.__dict__.items()     if (        not key.startswith(\'_\') and         not callable(value) and         key not in skip_keys and         key not in dist.display_option_names    )};data[\'metadata\'] = {    k: v for k, v in dist.metadata.__dict__.items()     if k not in (\'license_files\', \'provides_extras\')};sys.stdout.buffer.write(repr(data).encode(\'utf-8\'))']' returned non-zero exit status 1.
+
+[1.078s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extensions ['ignore', 'ignore_ament_install']
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extension 'ignore'
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extension 'ignore_ament_install'
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extensions ['colcon_pkg']
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extension 'colcon_pkg'
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extensions ['colcon_meta']
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extension 'colcon_meta'
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extensions ['ros']
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extension 'ros'
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extensions ['cmake', 'python']
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extension 'cmake'
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extension 'python'
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extensions ['python_setup_py']
+[1.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/dsr_rokey2/dsr_rokey2) by extension 'python_setup_py'
+[1.080s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.080s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.080s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.080s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.080s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_common2' in 'src/doosan-robot2/dsr_common2'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_description2' in 'src/doosan-robot2/dsr_description2'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_moveit_config_a0509' in 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0509'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_moveit_config_a0912' in 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_a0912'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_moveit_config_e0509' in 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_e0509'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_moveit_config_h2017' in 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2017'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_moveit_config_h2515' in 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_h2515'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_moveit_config_m0609' in 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0609'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_moveit_config_m0617' in 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m0617'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_moveit_config_m1013' in 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1013'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_moveit_config_m1509' in 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_m1509'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_moveit_config_p3020' in 'src/doosan-robot2/dsr_moveit2/dsr_moveit_config_p3020'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_msgs2' in 'src/doosan-robot2/dsr_msgs2'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_mujoco' in 'src/doosan-robot2/dsr_mujoco'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_visualservoing' in 'src/doosan-robot2/dsr_example2/dsr_visualservoing'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_bringup2' in 'src/doosan-robot2/dsr_bringup2'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_example' in 'src/doosan-robot2/dsr_example2/dsr_example'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_gazebo2' in 'src/doosan-robot2/dsr_gazebo2'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_hardware2' in 'src/doosan-robot2/dsr_hardware2'
+[1.128s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_realtime_control' in 'src/doosan-robot2/dsr_example2/dsr_realtime_control'
+[1.129s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_controller2' in 'src/doosan-robot2/dsr_controller2'
+[1.129s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'dsr_tests' in 'src/doosan-robot2/dsr_tests'
+[1.129s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.129s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.134s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 24 installed packages in /home/rokey/cobot_ws/install
+[1.136s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 313 installed packages in /opt/ros/humble
+[1.137s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.212s] Level 5:colcon.colcon_core.verb:set package 'cobot1' build argument 'cmake_args' from command line to 'None'
+[1.212s] Level 5:colcon.colcon_core.verb:set package 'cobot1' build argument 'cmake_target' from command line to 'None'
+[1.212s] Level 5:colcon.colcon_core.verb:set package 'cobot1' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.212s] Level 5:colcon.colcon_core.verb:set package 'cobot1' build argument 'cmake_clean_cache' from command line to 'False'
+[1.212s] Level 5:colcon.colcon_core.verb:set package 'cobot1' build argument 'cmake_clean_first' from command line to 'False'
+[1.212s] Level 5:colcon.colcon_core.verb:set package 'cobot1' build argument 'cmake_force_configure' from command line to 'False'
+[1.212s] Level 5:colcon.colcon_core.verb:set package 'cobot1' build argument 'ament_cmake_args' from command line to 'None'
+[1.212s] Level 5:colcon.colcon_core.verb:set package 'cobot1' build argument 'catkin_cmake_args' from command line to 'None'
+[1.212s] Level 5:colcon.colcon_core.verb:set package 'cobot1' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.212s] DEBUG:colcon.colcon_core.verb:Building package 'cobot1' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1', 'merge_install': False, 'path': '/home/rokey/ROKEY7_FIRST_PROJECT/src/cobot1', 'symlink_install': True, 'test_result_base': None}
+[1.213s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.213s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.214s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/rokey/ROKEY7_FIRST_PROJECT/src/cobot1' with build type 'ament_python'
+[1.214s] Level 1:colcon.colcon_core.shell:create_environment_hook('cobot1', 'ament_prefix_path')
+[1.218s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.218s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1/hook/ament_prefix_path.ps1'
+[1.219s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1/hook/ament_prefix_path.dsv'
+[1.220s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1/hook/ament_prefix_path.sh'
+[1.221s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.221s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.516s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/rokey/ROKEY7_FIRST_PROJECT/src/cobot1'
+[1.516s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.516s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.057s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1': PYTHONPATH=/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/build --no-deps symlink_data
+[2.711s] Level 1:colcon.colcon_core.shell:create_environment_hook('cobot1', 'pythonpath_develop')
+[2.712s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/share/cobot1/hook/pythonpath_develop.ps1'
+[2.712s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1' returned '0': PYTHONPATH=/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/build --no-deps symlink_data
+[2.713s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/share/cobot1/hook/pythonpath_develop.dsv'
+[2.714s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/share/cobot1/hook/pythonpath_develop.sh'
+[2.726s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1' for CMake module files
+[2.726s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1' for CMake config files
+[2.727s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib'
+[2.727s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/bin'
+[2.728s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/pkgconfig/cobot1.pc'
+[2.731s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/python3.10/site-packages'
+[2.731s] Level 1:colcon.colcon_core.shell:create_environment_hook('cobot1', 'pythonpath')
+[2.732s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1/hook/pythonpath.ps1'
+[2.732s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1/hook/pythonpath.dsv'
+[2.733s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1/hook/pythonpath.sh'
+[2.737s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/bin'
+[2.737s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cobot1)
+[2.738s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1/package.ps1'
+[2.744s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1/package.dsv'
+[2.745s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1/package.sh'
+[2.750s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1/package.bash'
+[2.752s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1/package.zsh'
+[2.754s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/colcon-core/packages/cobot1)
+[2.755s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.755s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.755s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.755s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.777s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.777s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.777s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.852s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.853s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rokey/ROKEY7_FIRST_PROJECT/install/local_setup.ps1'
+[2.855s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rokey/ROKEY7_FIRST_PROJECT/install/_local_setup_util_ps1.py'
+[2.858s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rokey/ROKEY7_FIRST_PROJECT/install/setup.ps1'
+[2.861s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rokey/ROKEY7_FIRST_PROJECT/install/local_setup.sh'
+[2.863s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rokey/ROKEY7_FIRST_PROJECT/install/_local_setup_util_sh.py'
+[2.864s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rokey/ROKEY7_FIRST_PROJECT/install/setup.sh'
+[2.868s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rokey/ROKEY7_FIRST_PROJECT/install/local_setup.bash'
+[2.869s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rokey/ROKEY7_FIRST_PROJECT/install/setup.bash'
+[2.872s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rokey/ROKEY7_FIRST_PROJECT/install/local_setup.zsh'
+[2.873s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rokey/ROKEY7_FIRST_PROJECT/install/setup.zsh'

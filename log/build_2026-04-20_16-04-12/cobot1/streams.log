@@ -1,0 +1,33 @@
+[0.842s] Invoking command in '/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1': PYTHONPATH=/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/build --no-deps symlink_data
+[1.137s] running develop
+[1.410s] running egg_info
+[1.411s] creating cobot1.egg-info
+[1.414s] writing cobot1.egg-info/PKG-INFO
+[1.414s] writing dependency_links to cobot1.egg-info/dependency_links.txt
+[1.414s] writing entry points to cobot1.egg-info/entry_points.txt
+[1.415s] writing requirements to cobot1.egg-info/requires.txt
+[1.416s] writing top-level names to cobot1.egg-info/top_level.txt
+[1.417s] writing manifest file 'cobot1.egg-info/SOURCES.txt'
+[1.420s] reading manifest file 'cobot1.egg-info/SOURCES.txt'
+[1.422s] writing manifest file 'cobot1.egg-info/SOURCES.txt'
+[1.425s] running build_ext
+[1.428s] Creating /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/python3.10/site-packages/cobot1.egg-link (link to .)
+[1.428s] Installing dough_grip_test script to /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/cobot1
+[1.430s] Installing force_test script to /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/cobot1
+[1.432s] Installing main = cobot1.main:maindougn_to_plate script to /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/cobot1
+[1.432s] Installing mini_jog script to /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/cobot1
+[1.432s] Installing move_basic script to /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/cobot1
+[1.433s] Installing move_periodic script to /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/cobot1
+[1.433s] Installing plate_setting_test script to /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/cobot1
+[1.434s] Installing press_test script to /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/cobot1
+[1.435s] Installing spatula_test script to /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/cobot1
+[1.436s] Installing surveon script to /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/cobot1
+[1.436s] 
+[1.436s] Installed /home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1
+[1.436s] running symlink_data
+[1.436s] creating /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/ament_index
+[1.436s] creating /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/ament_index/resource_index
+[1.438s] creating /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/ament_index/resource_index/packages
+[1.438s] symbolically linking /home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/resource/cobot1 -> /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/ament_index/resource_index/packages
+[1.438s] symbolically linking /home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/package.xml -> /home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/share/cobot1
+[1.497s] Invoked command in '/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1' returned '0': PYTHONPATH=/home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/ROKEY7_FIRST_PROJECT/install/cobot1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rokey/ROKEY7_FIRST_PROJECT/build/cobot1/build --no-deps symlink_data
