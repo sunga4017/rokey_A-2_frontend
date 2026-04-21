@@ -828,7 +828,7 @@
                 <button class="order-btn" onclick="goToPage('page-options')">🛍️<br>포장하기</button>
             </div>
         </div>
-        <a href="/admin" class="admin-btn">⚙️</a>
+        <a href="index.html" class="admin-btn">⚙️</a>
     </div>
 
     <div id="page-options" class="page">
@@ -905,7 +905,27 @@
         </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
     <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDl7RTKYMFTWWhaeIz2QsdrLi-ddx3BA5I",
+            authDomain: "rokey-fe6a9.firebaseapp.com",
+            databaseURL: "https://rokey-fe6a9-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "rokey-fe6a9",
+            storageBucket: "rokey-fe6a9.firebasestorage.app",
+            messagingSenderId: "89667570290",
+            appId: "1:89667570290:web:054b7affadc40488b850eb"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        
+        const statusTextRef = database.ref('robot_status/status_text');
+        const isCollidedRef = database.ref('robot_status/is_collided');
+        const isPausedRef = database.ref('robot_status/is_paused');
+        const requestQueueRef = database.ref('robot_commands/start_requests');
+
         function goToPage(pageId) {
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
@@ -933,59 +953,121 @@
             const sauce = document.querySelector('input[name="sauce"]:checked').value;
             const powder = document.querySelector('input[name="powder"]:checked').value;
 
+            // 로봇에 시작 요청 전송
+            try {
+                await requestQueueRef.push({
+                    sauce: sauce === 'sauce1' ? '소스 1' : (sauce === 'sauce2' ? '소스 2' : '선택없음'),
+                    powder: powder === 'powder1' ? '가루 1' : (powder === 'powder2' ? '가루 2' : '선택없음'),
+                    requested_at: firebase.database.ServerValue.TIMESTAMP,
+                    source: 'user-kiosk'
+                });
+            } catch (error) {
+                console.error('요청 전송 실패:', error);
+                alert('로봇에 요청을 보내지 못했습니다.');
+                return;
+            }
+
             goToPage('page-progress');
 
-            const statusText = document.getElementById('status-text');
+            // UI 초기화
             const pancake = document.getElementById('pancake-container');
             const arrow = document.getElementById('move-arrow');
             const sauceLayer = document.getElementById('sauce-layer');
             const powderLayer = document.getElementById('powder-layer');
 
             pancake.className = 'pancake-volumetric';
-            sauceLayer.classList.remove('show'); powderLayer.innerHTML = ''; arrow.classList.remove('show');
-
-            await delay(500);
-            statusText.innerText = "반죽을 가져 오고 있어요 🥣";
-            pancake.classList.add('state-drop');
-
-            await delay(1500);
-            statusText.innerText = "반죽을 누르고 있어요 🥞";
-            pancake.classList.add('state-press');
-
-            await delay(2000);
-            statusText.innerText = "반죽을 뒤집고 있어요 🍳";
-            pancake.classList.add('state-flip');
-
-            await delay(2000);
-            statusText.innerText = "완성된 팬케이크가 접시로 이동하고 있어요🍽️";
-            arrow.classList.add('show');
-
-            pancake.className = 'pancake-volumetric';
-            void pancake.offsetWidth;
-            pancake.classList.add('state-move');
-
-            await delay(1500);
+            sauceLayer.classList.remove('show'); 
+            powderLayer.innerHTML = ''; 
             arrow.classList.remove('show');
-
-            if (sauce !== 'none') {
-                statusText.innerText = "선택하신 소스를 뿌리고 있어요 🍯";
-                if (sauce === 'sauce1') document.documentElement.style.setProperty('--sauce-color', '#3E2723');
-                if (sauce === 'sauce2') document.documentElement.style.setProperty('--sauce-color', '#E91E63');
-                sauceLayer.classList.add('show');
-                await delay(2000);
-            }
-
-            if (powder !== 'none') {
-                statusText.innerText = "선택하신 가루를 뿌리는 중이예요 🧚‍♀️";
-                let powderColor = powder === 'powder1' ? '#FFFFFF' : '#AEEA00';
-                sprinklePowder(powderLayer, powderColor);
-                await delay(2000);
-            }
-
-            statusText.innerText = "✨ 맛있는 요정 팬케이크 완성! ✨";
-            await delay(1000);
-            showCompleteModal();
+            
+            window.selectedSauce = sauce;
+            window.selectedPowder = powder;
+            window.hasCompleted = false;
         }
+
+        // 파이어베이스 상태 텍스트 연동 및 애니메이션 동기화
+        statusTextRef.on('value', async (snapshot) => {
+            const text = snapshot.val() || '';
+            const statusTextEl = document.getElementById('status-text');
+            const pancake = document.getElementById('pancake-container');
+            const arrow = document.getElementById('move-arrow');
+            const sauceLayer = document.getElementById('sauce-layer');
+            const powderLayer = document.getElementById('powder-layer');
+
+            if (!document.getElementById('page-progress').classList.contains('active')) return;
+
+            // 텍스트에 맞춰 귀여운 멘트로 치환하고 CSS 애니메이션 클래스 트리거
+            if (text.includes("작동 중")) {
+                statusTextEl.innerText = "요정들이 요리를 준비하고 있어요! 🧚‍♀️";
+            } else if (text.includes("작업 1")) {
+                statusTextEl.innerText = "반죽을 가져 오고 있어요 🥣";
+                pancake.className = 'pancake-volumetric state-drop';
+            } else if (text.includes("작업 2")) {
+                statusTextEl.innerText = "반죽을 누르고 있어요 🥞";
+                pancake.className = 'pancake-volumetric state-drop state-press';
+            } else if (text.includes("작업 3")) {
+                statusTextEl.innerText = "반죽을 뒤집고 있어요 🍳";
+                pancake.className = 'pancake-volumetric state-drop state-press state-flip';
+            } else if (text.includes("작업 4")) {
+                statusTextEl.innerText = "완성된 팬케이크가 접시로 이동하고 있어요🍽️";
+                pancake.className = 'pancake-volumetric state-drop state-press state-flip';
+                setTimeout(() => {
+                    if (document.getElementById('page-progress').classList.contains('active')) {
+                        arrow.classList.add('show');
+                        pancake.className = 'pancake-volumetric state-move';
+                    }
+                }, 1800); // 뒤집기 후 1.8초 뒤 이동
+            } else if (text.includes("완료") && !window.hasCompleted) {
+                window.hasCompleted = true;
+                setTimeout(async () => {
+                    arrow.classList.remove('show');
+                    
+                    if (window.selectedSauce && window.selectedSauce !== 'none') {
+                        statusTextEl.innerText = "선택하신 소스를 뿌리고 있어요 🍯";
+                        if (window.selectedSauce === 'sauce1') document.documentElement.style.setProperty('--sauce-color', '#3E2723');
+                        if (window.selectedSauce === 'sauce2') document.documentElement.style.setProperty('--sauce-color', '#E91E63');
+                        sauceLayer.classList.add('show');
+                        await delay(2000);
+                    }
+                    if (window.selectedPowder && window.selectedPowder !== 'none') {
+                        statusTextEl.innerText = "선택하신 가루를 뿌리는 중이예요 🧚‍♀️";
+                        let powderColor = window.selectedPowder === 'powder1' ? '#FFFFFF' : '#AEEA00';
+                        sprinklePowder(powderLayer, powderColor);
+                        await delay(2000);
+                    }
+                    
+                    statusTextEl.innerText = "✨ 맛있는 요정 팬케이크 완성! ✨";
+                    await delay(1000);
+                    showCompleteModal();
+                }, 1500); // 이동 애니메이션을 마칠 시간을 벌어줌
+            }
+        });
+
+        // 충돌 감지 연동
+        isCollidedRef.on('value', (snapshot) => {
+            const collided = Boolean(snapshot.val());
+            const errorModal = document.getElementById('errorModal');
+            if (collided) {
+                document.getElementById('errorStatusText').innerText = "상태: 로봇에 충돌이 감지되었습니다!";
+                errorModal.classList.add('show');
+            } else {
+                errorModal.classList.remove('show');
+            }
+        });
+
+        // 일시정지 애니메이션 멈춤 연동
+        isPausedRef.on('value', (snapshot) => {
+            const paused = Boolean(snapshot.val());
+            const pancake = document.getElementById('pancake-container');
+            const arrow = document.getElementById('move-arrow');
+            if (paused) {
+                pancake.style.animationPlayState = 'paused';
+                arrow.style.animationPlayState = 'paused';
+            } else {
+                pancake.style.animationPlayState = 'running';
+                arrow.style.animationPlayState = 'running';
+            }
+        });
 
         let countdownInterval;
         function showCompleteModal() {
