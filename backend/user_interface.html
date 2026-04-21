@@ -219,7 +219,8 @@
             font-size: 2.5vh;
             text-decoration: none;
             transition: all 0.2s;
-            z-index: 110; /* 에러 팝업 등 어떤 상황에서도 항상 최상단에 보이도록 설정 */
+            z-index: 110;
+            /* 에러 팝업 등 어떤 상황에서도 항상 최상단에 보이도록 설정 */
         }
 
         #page-options header {
@@ -923,7 +924,7 @@
         };
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
-        
+
         const statusTextRef = database.ref('robot_status/status_text');
         const isCollidedRef = database.ref('robot_status/is_collided');
         const isPausedRef = database.ref('robot_status/is_paused');
@@ -939,18 +940,18 @@
         window.addEventListener('DOMContentLoaded', () => {
             const savedPage = localStorage.getItem('currentPage');
             if (savedPage) goToPage(savedPage);
-            
+
             const savedSauce = localStorage.getItem('selectedSauce');
             const savedPowder = localStorage.getItem('selectedPowder');
             if (savedSauce) window.selectedSauce = savedSauce;
             if (savedPowder) window.selectedPowder = savedPowder;
         });
 
-        function goHome() { 
+        function goHome() {
             localStorage.removeItem('currentPage');
             localStorage.removeItem('selectedSauce');
             localStorage.removeItem('selectedPowder');
-            location.reload(); 
+            location.reload();
         }
 
         const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -996,10 +997,10 @@
             const powderLayer = document.getElementById('powder-layer');
 
             pancake.className = 'pancake-volumetric';
-            sauceLayer.classList.remove('show'); 
-            powderLayer.innerHTML = ''; 
+            sauceLayer.classList.remove('show');
+            powderLayer.innerHTML = '';
             arrow.classList.remove('show');
-            
+
             // 나중에 완료 애니메이션에서 쓰기 위해 저장
             window.selectedSauce = sauce;
             window.selectedPowder = powder;
@@ -1048,7 +1049,7 @@
                 window.hasCompleted = true;
                 setTimeout(async () => {
                     arrow.classList.remove('show');
-                    
+
                     if (window.selectedSauce && window.selectedSauce !== 'none') {
                         statusTextEl.innerText = "선택하신 소스를 뿌리고 있어요 🍯";
                         if (window.selectedSauce === 'sauce1') document.documentElement.style.setProperty('--sauce-color', '#3E2723');
@@ -1062,7 +1063,7 @@
                         sprinklePowder(powderLayer, powderColor);
                         await delay(2000);
                     }
-                    
+
                     statusTextEl.innerText = "✨ 맛있는 요정 팬케이크 완성! ✨";
                     await delay(1000);
                     showCompleteModal();
