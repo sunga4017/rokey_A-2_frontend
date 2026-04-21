@@ -6,6 +6,9 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 
+# ROS 2 서비스 호출을 위한 import 추가
+from dsr_msgs2.srv import MovePause, MoveResume
+
 # ===== Firebase 설정 =====
 SERVICE_ACCOUNT_KEY_PATH = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
@@ -116,6 +119,10 @@ def main():
     initialize_robot()
     setup_io_clients(node)
 
+    # 제어용 ROS2 서비스 클라이언트 (루프 밖에서 1번만 생성)
+    pause_cli = node.create_client(MovePause, f'/{ROBOT_ID}/motion/move_pause')
+    resume_cli = node.create_client(MoveResume, f'/{ROBOT_ID}/motion/move_resume')
+
     # ===== 3. 대기 루프 =====
     print("\n" + "=" * 50)
     print("로봇 백엔드 서버 시작")
@@ -136,28 +143,40 @@ def main():
                 if command == "pause":
                     is_paused = True
                     print("\n[제어] 일시 정지 명령 수신")
-                    # TODO: 실제 로봇 일시 정지 API 호출 (예: task_pause())
+                    if pause_cli.wait_for_service(timeout_sec=1.0):
+                        pause_cli.call_async(MovePause.Request())
+                    else:
+                        print("[경고] move_pause 서비스를 찾을 수 없습니다.")
                     update_status(is_running, "일시 정지됨")
                 
                 elif command == "simulate_collision":
                     is_collided = True
                     is_paused = True
                     print("\n[제어] 충돌 시뮬레이션 수신")
-                    # TODO: 실제 로봇 정지 API 호출
+                    if pause_cli.wait_for_service(timeout_sec=1.0):
+                        pause_cli.call_async(MovePause.Request())
+                    else:
+                        print("[경고] move_pause 서비스를 찾을 수 없습니다.")
                     update_status(is_running, "충돌 감지 (시뮬레이션)")
                 
                 elif command == "resume":
                     is_paused = False
                     is_collided = False
                     print("\n[제어] 작동 재개 명령 수신")
-                    # TODO: 실제 로봇 재개 API 호출 (예: task_resume())
+                    if resume_cli.wait_for_service(timeout_sec=1.0):
+                        resume_cli.call_async(MoveResume.Request())
+                    else:
+                        print("[경고] move_resume 서비스를 찾을 수 없습니다.")
                     update_status(is_running, "작동 재개 중...")
                 
                 elif command == "resume_collision":
                     is_collided = False
                     is_paused = False
                     print("\n[제어] 충돌 해제 및 재개 명령 수신")
-                    # TODO: 실제 로봇 재개 API 호출
+                    if resume_cli.wait_for_service(timeout_sec=1.0):
+                        resume_cli.call_async(MoveResume.Request())
+                    else:
+                        print("[경고] move_resume 서비스를 찾을 수 없습니다.")
                     update_status(is_running, "충돌 해제 및 재개 중...")
                 
                 # 처리한 명령 삭제
