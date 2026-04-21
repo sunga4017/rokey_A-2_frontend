@@ -219,6 +219,7 @@
 
             pauseButton.disabled = !currentIsRunning || currentIsPaused || currentIsCollided;
             resumeButton.disabled = !currentIsRunning || !currentIsPaused || currentIsCollided;
+            simulateCollisionButton.disabled = !currentIsRunning || currentIsCollided;
             
             if (currentIsCollided) {
                 saveStatus.innerText = '충돌이 감지되었습니다. 팝업에서 해제해주세요.';
