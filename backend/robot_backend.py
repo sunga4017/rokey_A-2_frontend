@@ -15,13 +15,16 @@ DATABASE_URL = "https://rokey-fe6a9-default-rtdb.asia-southeast1.firebasedatabas
 
 # ===== 상태 관리 =====
 is_running = False
+is_paused = False
+is_collided = False
 status_ref = None
 command_queue_ref = None
+control_queue_ref = None
 
 
 def init_firebase():
     """Firebase 초기화"""
-    global status_ref, command_queue_ref
+    global status_ref, command_queue_ref, control_queue_ref
     try:
         cred = credentials.Certificate(SERVICE_ACCOUNT_KEY_PATH)
         firebase_admin.initialize_app(cred, {
@@ -32,12 +35,16 @@ def init_firebase():
 
     status_ref = db.reference("/robot_status")
     command_queue_ref = db.reference("/robot_commands/start_requests")
+    control_queue_ref = db.reference("/robot_commands/control_requests")
 
 
 def update_status(running, status_text, sauce="선택없음", powder="선택없음"):
     """Firebase에 로봇 상태 업데이트"""
+    global is_paused, is_collided
     status_ref.update({
         "is_running": running,
+        "is_paused": is_paused,
+        "is_collided": is_collided,
         "status_text": status_text,
         "selected_sauce": sauce,
         "selected_powder": powder,
@@ -90,7 +97,7 @@ def run_robot_task(request_id, sauce, powder):
 
 
 def main():
-    global is_running
+    global is_running, is_paused, is_collided
 
     # ===== 1. Firebase 초기화 =====
     init_firebase()
@@ -120,6 +127,43 @@ def main():
 
     try:
         while True:
+            # --- 1. 제어 명령(일시정지/충돌/재개) 처리 ---
+            control_requests = control_queue_ref.get() or {}
+            for req_id, req_data in control_requests.items():
+                req_data = req_data or {}
+                command = req_data.get("command")
+                
+                if command == "pause":
+                    is_paused = True
+                    print("\n[제어] 일시 정지 명령 수신")
+                    # TODO: 실제 로봇 일시 정지 API 호출 (예: task_pause())
+                    update_status(is_running, "일시 정지됨")
+                
+                elif command == "simulate_collision":
+                    is_collided = True
+                    is_paused = True
+                    print("\n[제어] 충돌 시뮬레이션 수신")
+                    # TODO: 실제 로봇 정지 API 호출
+                    update_status(is_running, "충돌 감지 (시뮬레이션)")
+                
+                elif command == "resume":
+                    is_paused = False
+                    is_collided = False
+                    print("\n[제어] 작동 재개 명령 수신")
+                    # TODO: 실제 로봇 재개 API 호출 (예: task_resume())
+                    update_status(is_running, "작동 재개 중...")
+                
+                elif command == "resume_collision":
+                    is_collided = False
+                    is_paused = False
+                    print("\n[제어] 충돌 해제 및 재개 명령 수신")
+                    # TODO: 실제 로봇 재개 API 호출
+                    update_status(is_running, "충돌 해제 및 재개 중...")
+                
+                # 처리한 명령 삭제
+                control_queue_ref.child(req_id).delete()
+
+            # --- 2. 기존 시작 요청 처리 ---
             pending_requests = command_queue_ref.get() or {}
 
             if pending_requests and not is_running:
