@@ -11,22 +11,22 @@
            ========================================== */
         :root {
             /* 1. 그릴 틀의 위치와 크기 */
-            --griddle-left: 5vw;
+            --griddle-left: 10%;
             --griddle-top: 15vh;
-            --griddle-width: 38vw;
+            --griddle-width: 35%;
 
             /* 2. 접시의 위치와 크기 */
-            --plate-left: 55vw;
+            --plate-left: 55%;
             --plate-top: 18vh;
-            --plate-width: 40vw;
+            --plate-width: 35%;
 
-            /* 3. 팬케이크 위치 (그릴의 정중앙 계산값) */
+            /* 3. 팬케이크 위치 (그릴의 정중앙 계산값 = 10% + 17.5%) */
             --pancake-griddle-top: 27.5vh;
-            --pancake-griddle-left: 24vw;
+            --pancake-griddle-left: 27.5%;
 
-            /* 4. 팬케이크 위치 (접시의 정중앙 계산값) */
+            /* 4. 팬케이크 위치 (접시의 정중앙 계산값 = 55% + 17.5%) */
             --pancake-plate-top: 27vh;
-            --pancake-plate-left: 75vw;
+            --pancake-plate-left: 72.5%;
 
             /* 소스 기본 색상 */
             --sauce-color: transparent;
@@ -396,7 +396,7 @@
         /* 그릴 -> 접시 이동 방향 화살표 애니메이션 */
         .arrow-indicator {
             position: absolute;
-            left: 45vw;
+            left: 47%;
             top: 22vh;
             font-size: 5vh;
             color: #FF9800;
@@ -471,9 +471,9 @@
 
         /* 💡 1단계: 반죽 '뿅' 애니메이션 & 선명한 3D 구형 반죽 💡 */
         .pancake-volumetric.state-drop {
-            width: 12vw;
-            height: 12vw;
-            /* 완벽한 공 모양을 위해 가로세로를 vw로 통일 */
+            width: 9vw;
+            height: 9vw;
+            /* 완벽한 공 모양을 위해 가로세로를 vw로 통일 (기존 12vw에서 축소) */
             animation: pancakeAppear 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
@@ -589,7 +589,7 @@
 
             50% {
                 top: calc(var(--pancake-griddle-top) - 15vh);
-                left: 50vw;
+                left: 50%;
                 transform: translate(-50%, -50%) scale(1.05) rotate(5deg);
             }
 
