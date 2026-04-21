@@ -219,6 +219,7 @@
             font-size: 2.5vh;
             text-decoration: none;
             transition: all 0.2s;
+            z-index: 110; /* 에러 팝업 등 어떤 상황에서도 항상 최상단에 보이도록 설정 */
         }
 
         #page-options header {
@@ -828,7 +829,6 @@
                 <button class="order-btn" onclick="goToPage('page-options')">🛍️<br>포장하기</button>
             </div>
         </div>
-        <a href="index.html" class="admin-btn">⚙️</a>
     </div>
 
     <div id="page-options" class="page">
@@ -905,6 +905,9 @@
         </div>
     </div>
 
+    <!-- 모든 페이지에서 고정적으로 보이는 관리자 버튼 -->
+    <a href="index.html" class="admin-btn">⚙️</a>
+
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
@@ -929,9 +932,26 @@
         function goToPage(pageId) {
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
+            localStorage.setItem('currentPage', pageId); // 현재 페이지 상태 저장
         }
 
-        function goHome() { location.reload(); }
+        // 페이지 새로고침(또는 돌아오기) 시 마지막 페이지 및 옵션 복구
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedPage = localStorage.getItem('currentPage');
+            if (savedPage) goToPage(savedPage);
+            
+            const savedSauce = localStorage.getItem('selectedSauce');
+            const savedPowder = localStorage.getItem('selectedPowder');
+            if (savedSauce) window.selectedSauce = savedSauce;
+            if (savedPowder) window.selectedPowder = savedPowder;
+        });
+
+        function goHome() { 
+            localStorage.removeItem('currentPage');
+            localStorage.removeItem('selectedSauce');
+            localStorage.removeItem('selectedPowder');
+            location.reload(); 
+        }
 
         const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -980,8 +1000,11 @@
             powderLayer.innerHTML = ''; 
             arrow.classList.remove('show');
             
+            // 나중에 완료 애니메이션에서 쓰기 위해 저장
             window.selectedSauce = sauce;
             window.selectedPowder = powder;
+            localStorage.setItem('selectedSauce', sauce);
+            localStorage.setItem('selectedPowder', powder);
             window.hasCompleted = false;
         }
 
@@ -997,7 +1020,11 @@
             if (!document.getElementById('page-progress').classList.contains('active')) return;
 
             // 텍스트에 맞춰 귀여운 멘트로 치환하고 CSS 애니메이션 클래스 트리거
-            if (text.includes("작동 중")) {
+            if (text.includes("충돌")) {
+                statusTextEl.innerText = "기계 요정에게 충돌이 발생했어요 🚨";
+            } else if (text.includes("일시 정지")) {
+                statusTextEl.innerText = "요정들이 잠시 쉬고 있어요 ⏸️";
+            } else if (text.includes("작동 중") || text.includes("재개")) {
                 statusTextEl.innerText = "요정들이 요리를 준비하고 있어요! 🧚‍♀️";
             } else if (text.includes("작업 1")) {
                 statusTextEl.innerText = "반죽을 가져 오고 있어요 🥣";
