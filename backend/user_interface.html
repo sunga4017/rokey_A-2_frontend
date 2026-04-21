@@ -951,12 +951,28 @@
             const savedPowder = localStorage.getItem('selectedPowder');
             if (savedSauce) window.selectedSauce = savedSauce;
             if (savedPowder) window.selectedPowder = savedPowder;
+
+            const savedPancakeState = localStorage.getItem('pancakeState');
+            if (savedPancakeState) {
+                document.getElementById('pancake-container').className = savedPancakeState;
+            }
+            const savedArrowState = localStorage.getItem('arrowState');
+            if (savedArrowState === 'show') {
+                document.getElementById('move-arrow').classList.add('show');
+            }
+            const savedStepText = localStorage.getItem('stepText');
+            if (savedStepText) {
+                document.getElementById('status-text').innerText = savedStepText;
+            }
         });
 
         function goHome() {
             localStorage.removeItem('currentPage');
             localStorage.removeItem('selectedSauce');
             localStorage.removeItem('selectedPowder');
+            localStorage.removeItem('pancakeState');
+            localStorage.removeItem('arrowState');
+            localStorage.removeItem('stepText');
             location.reload();
         }
 
@@ -1027,30 +1043,45 @@
             if (!document.getElementById('page-progress').classList.contains('active')) return;
 
             // 텍스트에 맞춰 귀여운 멘트로 치환하고 CSS 애니메이션 클래스 트리거
-            if (text.includes("충돌")) {
+            if (text.includes("충돌") && !text.includes("재개")) {
                 statusTextEl.innerText = "기계 요정에게 충돌이 발생했어요 🚨";
             } else if (text.includes("일시 정지")) {
                 statusTextEl.innerText = "요정들이 잠시 쉬고 있어요 ⏸️";
-            } else if (text.includes("작동 중") || text.includes("재개")) {
-                statusTextEl.innerText = "요정들이 요리를 준비하고 있어요! 🧚‍♀️";
             } else if (text.includes("작업 1")) {
                 statusTextEl.innerText = "반죽을 가져 오고 있어요 🥣";
                 pancake.className = 'pancake-volumetric state-drop';
+                localStorage.setItem('pancakeState', pancake.className);
+                localStorage.setItem('stepText', statusTextEl.innerText);
             } else if (text.includes("작업 2")) {
                 statusTextEl.innerText = "반죽을 누르고 있어요 🥞";
                 pancake.className = 'pancake-volumetric state-drop state-press';
+                localStorage.setItem('pancakeState', pancake.className);
+                localStorage.setItem('stepText', statusTextEl.innerText);
             } else if (text.includes("작업 3")) {
                 statusTextEl.innerText = "반죽을 뒤집고 있어요 🍳";
                 pancake.className = 'pancake-volumetric state-drop state-press state-flip';
+                localStorage.setItem('pancakeState', pancake.className);
+                localStorage.setItem('stepText', statusTextEl.innerText);
             } else if (text.includes("작업 4")) {
                 statusTextEl.innerText = "완성된 팬케이크가 접시로 이동하고 있어요🍽️";
                 pancake.className = 'pancake-volumetric state-drop state-press state-flip';
+                localStorage.setItem('pancakeState', pancake.className);
+                localStorage.setItem('stepText', statusTextEl.innerText);
                 setTimeout(() => {
                     if (document.getElementById('page-progress').classList.contains('active')) {
                         arrow.classList.add('show');
                         pancake.className = 'pancake-volumetric state-move';
+                        localStorage.setItem('pancakeState', pancake.className);
+                        localStorage.setItem('arrowState', 'show');
                     }
                 }, 1800); // 뒤집기 후 1.8초 뒤 이동
+            } else if (text.includes("작동 중") || text.includes("재개")) {
+                const savedStepText = localStorage.getItem('stepText');
+                if (savedStepText) {
+                    statusTextEl.innerText = savedStepText;
+                } else {
+                    statusTextEl.innerText = "요정들이 요리를 준비하고 있어요! 🧚‍♀️";
+                }
             } else if (text.includes("완료") && !window.hasCompleted) {
                 window.hasCompleted = true;
                 setTimeout(async () => {
